@@ -1,6 +1,6 @@
 from flask import escape
 
-def clock_angle_between_hands(request):
+def clock_angle_between_hands_m(request):
     """
     Function to calculate angle between 2 hands of clock.
     Deployed on Gcloud as cloud function.
