@@ -10,7 +10,7 @@ def clock_angle_between_hands_m(request):
 
     Argument: request (flask.Request): HTTP request object.
     """
-    request_json = request.get_json()
+    request_json = request.get_json(silent=True)
     request_args = request.args
     if request.args and 'h' in request.args:
         h = int(request.args.get('h'))
