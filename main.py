@@ -30,7 +30,7 @@ def clock_angle_between_hands_m(request):
     if (0 <= int(h) <= 12 and 0 <= int(m) <= 60):
         if (h == 12):
             h = 0
-            dummy_h=12
+           # dummy_h=12
         if (m == 60):
             m = 0
         hour_angle = 0.5 * (h * 60 + m)
@@ -38,10 +38,9 @@ def clock_angle_between_hands_m(request):
 
         angle = abs(hour_angle - minute_angle)
         angle = min(360 - angle, angle)   # returns minimum of 2 side of angle
-        if (h!=12):
-            dummy_h = h
-        out_string = "Angle between hour hand at "+str(dummy_h) + " & minute hand at " + str(m) + " is : " + str(angle) +" degrees."
 
+        #out_string = "Angle between hour hand at "+str(dummy_h) + " & minute hand at " + str(m) + " is : " + str(angle) +" degrees."
+        out_string = "Angle between hour hand & minute hand is : " + str(angle) +" degrees."
     else:
         out_string = "Wrong input. Time should be entered in 12-hour format. eg ?h=06&m=00"
     return out_string
