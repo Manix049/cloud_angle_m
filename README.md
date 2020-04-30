@@ -5,7 +5,7 @@ Function to calculate angle between 2 hands of clock.
     responds to all http request
 
 
-# deployed url(Mandatory to pass Parameters) : https://us-central1-ind-coe.cloudfunctions.net/clock_angle_between_hands_m?h=06&m=00
+# deployed url(Mandatory to pass Parameters) : https://us-central1-ind-coe.cloudfunctions.net/clock_angle_between_hands_m?h=03&m=00
 
 google-repository: github_manix049_cloud_angle_m
 
