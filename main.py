@@ -6,21 +6,24 @@ def clock_angle_between_hands_m(request):
     Deployed on Gcloud as cloud function.
     responds to all http request.
 
-    deployed url: https://us-central1-ind-coe.cloudfunctions.net/clock_angle_between_hands?h=06&m=00
+    deployed url: https://us-central1-ind-coe.cloudfunctions.net/clock_angle_between_hands_m?h=06&m=00
 
     Argument: request (flask.Request): HTTP request object.
     """
     request_json = request.get_json(silent=True)
     request_args = request.args
-    if request.args and 'h' in request.args:
-        h = int(request.args.get('h'))
-        m = int(request.args.get('m'))
+    if request_args and 'h' in request_args:
+         h = int(request_args['h'])
+         m = int(request_args['m'])
+    #if request.args and 'h' in request.args:
+    #    h = int(request.args.get('h'))
+    #    m = int(request.args.get('m'))
     elif request_json and 'h' in request_json:
         h = int(request_json['h'])
         m = int(request_json['m'])
-    elif request_args and 'h' in request_args:
-        h = int(request_args['h'])
-        m = int(request_args['m'])
+    #elif request_args and 'h' in request_args:
+    #    h = int(request_args['h'])
+    #    m = int(request_args['m'])
     else:
         out_string = "Wrong input. Time should be entered in 12-hour format. eg ?h=06&m=00"
 
